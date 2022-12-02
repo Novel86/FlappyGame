@@ -121,7 +121,7 @@ function drawHero() {
 
 // все что с колоннами
 // переменные для колонн
-var rast = (playerObject.height + 70 - playerObject.height + 30) * Math.random() + playerObject.height + 30, //расстояние между колоннами
+var rast = ((playerObject.height + 70) - (playerObject.height + 30)) * Math.random() + (playerObject.height + 30), //расстояние между колоннами
 	max = window.innerHeight * 0.72, // макс расстояние появления колонн
 	min = window.innerHeight * 0.3, // мин расстояние
 	speedColumn = 10; // скорость колонн
