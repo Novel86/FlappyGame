@@ -1,0 +1,45 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+canvas {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#start,
+#kirill,
+#bird {
+	position: absolute;
+	padding: 10px 29px;
+	background: #e86101;
+	color: #ffffff;
+	border-radius: 5px;
+	border: 2px solid #92825f;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#start {
+	top: 63px;
+	left: 23px;
+}
+
+#kirill {
+	top: 133px;
+	left: 23px;
+}
+
+#bird {
+	top: 183px;
+	left: 23px;
+}
+
+#start:hover,
+#kirill:hover,
+#bird:hover {
+	background: #ec8c46;
+}
