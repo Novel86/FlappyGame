@@ -32,7 +32,7 @@ function kirHero() {
 	imgHero.src = 'img/kir_base.png';
 	imgHeroUP.src = 'img/kir_jump.png';
 	playerObject.width = window.innerWidth * 0.035;
-	playerObject.height = playerObject.width / 0.012345679;
+	playerObject.height = playerObject.width / 0.691358;
 	drawHero();
 }
 
@@ -40,7 +40,7 @@ function birdHero() {
 	imgHero.src = 'img/Flappy_Bird.png';
 	imgHeroUP.src = 'img/Flappy_Bird_Up.png';
 	playerObject.width = window.innerWidth * 0.046875;
-	playerObject.height = playerObject.width / 1.40625;
+	playerObject.height = playerObject.width / 1.5;
 	drawHero();
 }
 
@@ -95,7 +95,7 @@ playerObject.drawY = 150;
 playerObject.isUp = false;
 playerObject.drawX = 120;
 playerObject.width = window.innerWidth * 0.046875;
-playerObject.height = playerObject.width / 1.40625;
+playerObject.height = playerObject.width / 1.5;
 
 // рисуем героя
 function drawHero() {
