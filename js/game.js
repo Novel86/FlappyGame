@@ -121,7 +121,9 @@ function drawHero() {
 
 // все что с колоннами
 // переменные для колонн
-var rast = ((playerObject.height + 70) - (playerObject.height + 30)) * Math.random() + (playerObject.height + 30), //расстояние между колоннами
+var rastMax = playerObject.height + 80,
+	rastMin = playerObject.height + 40,
+	rast = (rastMax - rastMin) * Math.random() + rastMin, //расстояние между колоннами
 	max = window.innerHeight * 0.72, // макс расстояние появления колонн
 	min = window.innerHeight * 0.3, // мин расстояние
 	speedColumn = 10; // скорость колонн
@@ -134,23 +136,24 @@ imgColumnTop.src = 'img/Pl_Up.png';
 var colonnObj = {};
 colonnObj.drawX = window.innerWidth * 0.55;
 colonnObj.drawY = (max - min) * Math.random() + min;
-colonnObj.height = 598;
-colonnObj.width = 92;
+colonnObj.height = window.innerHeight * 0.6675567;
+colonnObj.width = window.innerWidth * 0.0455729;
 
 // рисую колонны
 function drawColumn() {
 	var randColumn = (max - min) * Math.random() + min;
 	ctxColumnBottom.clearRect(0, 0, gameWidth, gameHeight);
-	ctxColumnBottom.drawImage(imgColumnBottom, colonnObj.drawX, colonnObj.drawY, 70, 400);
+	ctxColumnBottom.drawImage(imgColumnBottom, colonnObj.drawX, colonnObj.drawY, colonnObj.width, colonnObj.height);
 
 	ctxColumnTop.clearRect(0, 0, gameWidth, gameHeight);
-	ctxColumnTop.drawImage(imgColumnTop, colonnObj.drawX, colonnObj.drawY - rast - 400, 70, 400);
+	ctxColumnTop.drawImage(imgColumnTop, colonnObj.drawX, colonnObj.drawY - rast - colonnObj.height, colonnObj.width, colonnObj.height);
 
 	colonnObj.drawX -= speedColumn;
 	if (colonnObj.drawX < 0 - colonnObj.width) {
 		colonnObj.drawX = gameWidth + colonnObj.width;
 		colonnObj.drawY = randColumn;
 		speedColumn += 0.03 * 15;
+		rast = (rastMax - rastMin) * Math.random() + rastMin;
 		score++;
 	}
 	// проверка пересечения с колоннами
