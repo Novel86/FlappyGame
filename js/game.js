@@ -16,8 +16,8 @@ var ctxBackground = backgroundCanvas.getContext('2d'),
 	ctxInfo = infoCanvas.getContext('2d'),
 	ctxstartScreen = startScreenCanvas.getContext('2d');
 
-var gameWidth = 1100,
-	gameHeight = 650;
+var gameWidth = window.innerWidth * 0.7,
+	gameHeight = window.innerHeight * 0.85;
 
 // переменные для картинок
 var imgBackground = new Image();
@@ -119,9 +119,9 @@ function drawHero() {
 
 // все что с колоннами
 // переменные для колонн
-var rast = 160, //расстояние между колоннами
-	max = 550, // макс расстояние появления колонн
-	min = 220, // мин расстояние
+var rast = (150 - 100) * Math.random() + 100, //расстояние между колоннами
+	max = window.innerHeight * 0.72, // макс расстояние появления колонн
+	min = window.innerHeight * 0.3, // мин расстояние
 	speedColumn = 10; // скорость колонн
 
 var imgColumnBottom = new Image();
@@ -149,7 +149,6 @@ function drawColumn() {
 		colonnObj.drawX = gameWidth + colonnObj.width;
 		colonnObj.drawY = randColumn;
 		speedColumn += 0.03 * 15;
-		rast = (160 - 100) * Math.random() + 100;
 		score++;
 	}
 	// проверка пересечения с колоннами
