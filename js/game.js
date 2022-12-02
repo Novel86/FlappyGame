@@ -33,14 +33,16 @@ function kirHero() {
 	imgHeroUP.src = 'img/kir_jump.png';
 	playerObject.height = 81;
 	playerObject.width = 56;
+	playerObject.height = window.innerHeight * 0.108144;
+	playerObject.width = window.innerWidth * 0.035;
 	drawHero();
 }
 
 function birdHero() {
 	imgHero.src = 'img/Flappy_Bird.png';
 	imgHeroUP.src = 'img/Flappy_Bird_Up.png';
-	playerObject.height = 50;
-	playerObject.width = 75;
+	playerObject.height = window.innerHeight * 0.07;
+	playerObject.width = window.innerWidth * 0.046875;
 	drawHero();
 }
 
@@ -94,8 +96,8 @@ var playerObject = {};
 playerObject.drawY = 150;
 playerObject.isUp = false;
 playerObject.drawX = 120;
-playerObject.height = 50;
-playerObject.width = 75;
+playerObject.height = window.innerHeight * 0.07;
+playerObject.width = window.innerWidth * 0.046875;
 
 // рисуем героя
 function drawHero() {
@@ -119,7 +121,7 @@ function drawHero() {
 
 // все что с колоннами
 // переменные для колонн
-var rast = (150 - 100) * Math.random() + 100, //расстояние между колоннами
+var rast = (playerObject.height + 70 - playerObject.height + 30) * Math.random() + playerObject.height + 30, //расстояние между колоннами
 	max = window.innerHeight * 0.72, // макс расстояние появления колонн
 	min = window.innerHeight * 0.3, // мин расстояние
 	speedColumn = 10; // скорость колонн
@@ -130,7 +132,7 @@ var imgColumnTop = new Image();
 imgColumnTop.src = 'img/Pl_Up.png';
 
 var colonnObj = {};
-colonnObj.drawX = 600;
+colonnObj.drawX = window.innerWidth * 0.55;
 colonnObj.drawY = (max - min) * Math.random() + min;
 colonnObj.height = 598;
 colonnObj.width = 92;
