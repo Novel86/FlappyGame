@@ -43,3 +43,15 @@ canvas {
 #bird:hover {
 	background: #ec8c46;
 }
+
+p {
+	margin-left: 23px;
+	font-family: Arial, serif;
+	color: gray;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+p span {
+	font-weight: 900;
+}
